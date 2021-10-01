@@ -10,12 +10,12 @@ import DeleteForever from '@material-ui/icons/DeleteForever';
 const Complete = () => {
     const classes = useStyles()
     const dispatch = useDispatch()
-   const {todo} = useSelector((state)=>state)
+    const {todo} = useSelector((state)=>state)
    
     const updateTodo = todo.filter((el) => el.status === true)
     console.log("Truedata",updateTodo)
+    
     useEffect(() => {
-        
         dispatch(getdata())
     },[])
     return (
@@ -31,16 +31,13 @@ const Complete = () => {
                     </div>
                     <div className={classes.Item_div2}>
                      
-
                         <Button  startIcon={<DeleteForever />} className={classes.Item_div_button} variant="contained" color="secondary">Delete</Button>
                         <Link className={classes.Text_style} to={`/item/${el.id}/edit`}>
                             <Button className={classes.Item_div_button} variant="contained" color="primary">EDIT</Button>
                         </Link>
                     </div>
                 </Card>
-            ))
-
-            }
+            ))}
         </div>
     )
 }
