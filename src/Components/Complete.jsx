@@ -10,12 +10,11 @@ import DeleteForever from '@material-ui/icons/DeleteForever';
 const Complete = () => {
     const classes = useStyles()
     const dispatch = useDispatch()
-   const {todo} = useSelector((state)=>state)
+    const {todo} = useSelector((state)=>state)
    
     const updateTodo = todo.filter((el) => el.status === true)
     console.log("Truedata",updateTodo)
     useEffect(() => {
-        
         dispatch(getdata())
     },[])
     return (
